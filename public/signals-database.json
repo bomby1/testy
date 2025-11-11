@@ -1,0 +1,363 @@
+{
+  "lastUpdated": "2025-11-10T13:43:58.849Z",
+  "currentBuySignals": [
+    {
+      "symbol": "BEDC",
+      "signal": "BUY",
+      "date": "2025_11_10",
+      "generatedOn": "2025-11-10",
+      "price": 605,
+      "details": {
+        "rsiFast": "46.65",
+        "rsiSlow": "46.31",
+        "downtrendPrice": "563.79",
+        "breakoutStrength": "7.31"
+      }
+    },
+    {
+      "symbol": "CITY",
+      "signal": "BUY",
+      "date": "2025_11_10",
+      "generatedOn": "2025-11-10",
+      "price": 564,
+      "details": {
+        "rsiFast": "44.14",
+        "rsiSlow": "40.43",
+        "downtrendPrice": "543.77",
+        "breakoutStrength": "3.72"
+      }
+    }
+  ],
+  "currentSellSignals": [
+    {
+      "symbol": "NLG",
+      "signal": "SELL",
+      "date": "2025_11_10",
+      "generatedOn": "2025-11-10",
+      "price": 693,
+      "details": {
+        "rsiFast": "38.53",
+        "rsiSlow": "41.74",
+        "uptrendPrice": "696.02",
+        "breakdownStrength": "0.43"
+      }
+    },
+    {
+      "symbol": "SKBBL",
+      "signal": "SELL",
+      "date": "2025_11_10",
+      "generatedOn": "2025-11-10",
+      "price": 852.3,
+      "details": {
+        "rsiFast": "45.43",
+        "rsiSlow": "48.99",
+        "uptrendPrice": "854.00",
+        "breakdownStrength": "0.20"
+      }
+    }
+  ],
+  "signalHistory": [
+    {
+      "date": "2025-11-03",
+      "buyCount": 0,
+      "sellCount": 0,
+      "buySignals": [],
+      "sellSignals": []
+    },
+    {
+      "date": "2025-11-03",
+      "buyCount": 9,
+      "sellCount": 4,
+      "buySignals": [
+        {
+          "symbol": "GUFL",
+          "price": 539.1
+        },
+        {
+          "symbol": "KLBSL",
+          "price": 1070
+        },
+        {
+          "symbol": "MLBBL",
+          "price": 1479
+        },
+        {
+          "symbol": "MNMF1",
+          "price": 9.21
+        },
+        {
+          "symbol": "NICD83/84",
+          "price": 1122
+        },
+        {
+          "symbol": "NICL",
+          "price": 544
+        },
+        {
+          "symbol": "RSY",
+          "price": 9.18
+        },
+        {
+          "symbol": "SBID89",
+          "price": 1210
+        },
+        {
+          "symbol": "SHIVM",
+          "price": 613.1
+        }
+      ],
+      "sellSignals": [
+        {
+          "symbol": "ANLB",
+          "price": 6186.9
+        },
+        {
+          "symbol": "CZBIL",
+          "price": 202
+        },
+        {
+          "symbol": "GBIME",
+          "price": 233.4
+        },
+        {
+          "symbol": "SBD89",
+          "price": 1141
+        }
+      ]
+    },
+    {
+      "date": "2025-11-04",
+      "buyCount": 8,
+      "sellCount": 1,
+      "buySignals": [
+        {
+          "symbol": "FMDBL",
+          "price": 950
+        },
+        {
+          "symbol": "JOSHI",
+          "price": 320
+        },
+        {
+          "symbol": "KEF",
+          "price": 9.27
+        },
+        {
+          "symbol": "KLBSL",
+          "price": 1070
+        },
+        {
+          "symbol": "NICD83/84",
+          "price": 1122
+        },
+        {
+          "symbol": "RURU",
+          "price": 744
+        },
+        {
+          "symbol": "SBID89",
+          "price": 1210
+        },
+        {
+          "symbol": "SMPDA",
+          "price": 990
+        }
+      ],
+      "sellSignals": [
+        {
+          "symbol": "SBD89",
+          "price": 1141
+        }
+      ]
+    },
+    {
+      "date": "2025-11-05",
+      "buyCount": 13,
+      "sellCount": 1,
+      "buySignals": [
+        {
+          "symbol": "BFC",
+          "price": 470.1
+        },
+        {
+          "symbol": "BNT",
+          "price": 11074.7
+        },
+        {
+          "symbol": "GUFL",
+          "price": 543
+        },
+        {
+          "symbol": "KLBSL",
+          "price": 1070
+        },
+        {
+          "symbol": "MPFL",
+          "price": 549.8
+        },
+        {
+          "symbol": "NICD83/84",
+          "price": 1122
+        },
+        {
+          "symbol": "NIFRA",
+          "price": 272.6
+        },
+        {
+          "symbol": "NIMB",
+          "price": 204.8
+        },
+        {
+          "symbol": "RHGCL",
+          "price": 254
+        },
+        {
+          "symbol": "RSY",
+          "price": 9.1
+        },
+        {
+          "symbol": "SJLIC",
+          "price": 438
+        },
+        {
+          "symbol": "USHL",
+          "price": 732
+        },
+        {
+          "symbol": "USLB",
+          "price": 2231
+        }
+      ],
+      "sellSignals": [
+        {
+          "symbol": "SBD89",
+          "price": 1141
+        }
+      ]
+    },
+    {
+      "date": "2025-11-06",
+      "buyCount": 4,
+      "sellCount": 1,
+      "buySignals": [
+        {
+          "symbol": "CLI",
+          "price": 472
+        },
+        {
+          "symbol": "DLBS",
+          "price": 1365
+        },
+        {
+          "symbol": "NICD83/84",
+          "price": 1122
+        },
+        {
+          "symbol": "WNLB",
+          "price": 2039
+        }
+      ],
+      "sellSignals": [
+        {
+          "symbol": "UPPER",
+          "price": 178.2
+        }
+      ]
+    },
+    {
+      "date": "2025-11-07",
+      "buyCount": 4,
+      "sellCount": 1,
+      "buySignals": [
+        {
+          "symbol": "CLI",
+          "price": 472
+        },
+        {
+          "symbol": "DLBS",
+          "price": 1365
+        },
+        {
+          "symbol": "NICD83/84",
+          "price": 1122
+        },
+        {
+          "symbol": "WNLB",
+          "price": 2039
+        }
+      ],
+      "sellSignals": [
+        {
+          "symbol": "UPPER",
+          "price": 178.2
+        }
+      ]
+    },
+    {
+      "date": "2025-11-09",
+      "buyCount": 2,
+      "sellCount": 6,
+      "buySignals": [
+        {
+          "symbol": "DLBS",
+          "price": 1450
+        },
+        {
+          "symbol": "NICD83/84",
+          "price": 1122
+        }
+      ],
+      "sellSignals": [
+        {
+          "symbol": "CIT",
+          "price": 1840
+        },
+        {
+          "symbol": "NBL",
+          "price": 244
+        },
+        {
+          "symbol": "NIMB",
+          "price": 198.2
+        },
+        {
+          "symbol": "SAPDBL",
+          "price": 797.1
+        },
+        {
+          "symbol": "SSHL",
+          "price": 165
+        },
+        {
+          "symbol": "UPPER",
+          "price": 175.6
+        }
+      ]
+    },
+    {
+      "date": "2025-11-10",
+      "buyCount": 2,
+      "sellCount": 2,
+      "buySignals": [
+        {
+          "symbol": "BEDC",
+          "price": 605
+        },
+        {
+          "symbol": "CITY",
+          "price": 564
+        }
+      ],
+      "sellSignals": [
+        {
+          "symbol": "NLG",
+          "price": 693
+        },
+        {
+          "symbol": "SKBBL",
+          "price": 852.3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Trading Chart - NEPSE Stock Screener</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="advanced-chart.css">
+    <!-- TradingView Lightweight Charts Library -->
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2802879468571013"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="chart-page-container">
+        <!-- Header -->
+        <header class="chart-header">
+            <div class="header-left">
+                <h1>📈 Advanced Trading Chart</h1>
+                <p class="subtitle">Professional Trading View with Technical Indicators</p>
+            </div>
+            <div class="header-right">
+                <button id="backToDashboard" class="back-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back to Dashboard
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <div class="nav-container-chart">
+            <div class="nav-links">
+                <!-- Navigation links will be populated by common-nav.js -->
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="chart-main-content">
+            <!-- Sidebar Controls -->
+            <aside class="chart-sidebar">
+                <div class="sidebar-section">
+                    <h3>Stock Selection</h3>
+                    <div class="stock-selector">
+                        <input type="text" 
+                               id="stockSearch" 
+                               placeholder="Search stock symbol..."
+                               list="stockList"
+                               autocomplete="off">
+                        <datalist id="stockList"></datalist>
+                        <button id="loadStockBtn" class="load-btn">Load Chart</button>
+                    </div>
+                    <div id="stockInfo" class="stock-info hidden">
+                        <div class="info-item">
+                            <span class="label">Symbol:</span>
+                            <span class="value" id="symbolName">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">LTP:</span>
+                            <span class="value" id="ltpValue">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Change:</span>
+                            <span class="value" id="changeValue">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Chart Settings</h3>
+                    <div class="chart-controls">
+                        <div class="control-group">
+                            <label>Chart Type</label>
+                            <select id="chartType">
+                                <option value="candlestick">Candlestick</option>
+                                <option value="line">Line</option>
+                                <option value="area">Area</option>
+                                <option value="bar">Bar</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label>Time Period</label>
+                            <select id="timePeriod">
+                                <option value="7">Last 7 Days</option>
+                                <option value="30">Last 30 Days</option>
+                                <option value="90">Last 3 Months</option>
+                                <option value="180">Last 6 Months</option>
+                                <option value="365" selected>Last Year</option>
+                                <option value="all">All Time</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Technical Indicators</h3>
+                    <div class="indicators-list">
+                        <label class="indicator-item">
+                            <input type="checkbox" id="showSMA" data-indicator="sma">
+                            <span>SMA (Simple Moving Average)</span>
+                        </label>
+                        <div class="indicator-params hidden" id="smaParams">
+                            <input type="number" id="smaPeriod" value="20" min="1" max="200">
+                            <label>Period</label>
+                        </div>
+
+                        <label class="indicator-item">
+                            <input type="checkbox" id="showEMA" data-indicator="ema">
+                            <span>EMA (Exponential Moving Average)</span>
+                        </label>
+                        <div class="indicator-params hidden" id="emaParams">
+                            <input type="number" id="emaPeriod" value="12" min="1" max="200">
+                            <label>Period</label>
+                        </div>
+
+                        <label class="indicator-item">
+                            <input type="checkbox" id="showRSI" data-indicator="rsi">
+                            <span>RSI (Relative Strength Index)</span>
+                        </label>
+                        <div class="indicator-params hidden" id="rsiParams">
+                            <input type="number" id="rsiPeriod" value="14" min="1" max="100">
+                            <label>Period</label>
+                        </div>
+
+                        <label class="indicator-item">
+                            <input type="checkbox" id="showMACD" data-indicator="macd">
+                            <span>MACD</span>
+                        </label>
+
+                        <label class="indicator-item">
+                            <input type="checkbox" id="showBollinger" data-indicator="bollinger">
+                            <span>Bollinger Bands</span>
+                        </label>
+                        <div class="indicator-params hidden" id="bollingerParams">
+                            <input type="number" id="bollingerPeriod" value="20" min="1" max="100">
+                            <label>Period</label>
+                            <input type="number" id="bollingerStdDev" value="2" min="1" max="5" step="0.1">
+                            <label>Std Dev</label>
+                        </div>
+
+                        <label class="indicator-item">
+                            <input type="checkbox" id="showVolume" data-indicator="volume" checked>
+                            <span>Volume</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Drawing Tools</h3>
+                    <div class="drawing-tools">
+                        <button class="tool-btn" data-tool="trendline">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="19" x2="19" y2="5"/>
+                            </svg>
+                            Trendline
+                        </button>
+                        <button class="tool-btn" data-tool="horizontal">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="12" x2="21" y2="12"/>
+                            </svg>
+                            Horizontal Line
+                        </button>
+                        <button class="tool-btn" data-tool="clear">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                            </svg>
+                            Clear All
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Chart Area -->
+            <div class="chart-area">
+                <div class="chart-toolbar">
+                    <div class="toolbar-left">
+                        <button class="toolbar-btn" id="zoomIn" title="Zoom In">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/>
+                            </svg>
+                        </button>
+                        <button class="toolbar-btn" id="zoomOut" title="Zoom Out">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21l-4.35-4.35M8 11h6"/>
+                            </svg>
+                        </button>
+                        <button class="toolbar-btn" id="resetZoom" title="Reset Zoom">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 12a9 9 0 0118 0 9 9 0 01-18 0z"/>
+                                <path d="M12 8v8M8 12h8"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="toolbar-right">
+                        <button class="toolbar-btn" id="fullscreenBtn" title="Fullscreen">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+                            </svg>
+                        </button>
+                        <button class="toolbar-btn" id="downloadBtn" title="Download Chart">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="mainChart" class="main-chart-container">
+                    <div class="chart-placeholder">
+                        <div class="placeholder-content">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 3v18h18"/>
+                                <path d="M18 17l-4-4-4 4-4-4"/>
+                            </svg>
+                            <h3>Select a Stock to View Chart</h3>
+                            <p>Choose a stock symbol from the sidebar to load the trading chart</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="volumeChart" class="volume-chart-container hidden"></div>
+                <div id="indicatorChart" class="indicator-chart-container hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="api-service.js"></script>
+    <script src="common-nav.js"></script>
+    <script src="advanced-chart.js"></script>
+</body>
+</html>

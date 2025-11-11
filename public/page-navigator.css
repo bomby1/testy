@@ -1,0 +1,301 @@
+/* ===== FANCY PAGE NAVIGATOR STYLES ===== */
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+    background: var(--primary-gradient);
+    border-radius: var(--radius-2xl);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 var(--spacing-md) 0;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin: 0;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* Page Categories */
+.page-categories {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+.category-section {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.category-section:hover {
+    box-shadow: var(--shadow-2xl);
+    border-color: rgba(102, 126, 234, 0.2);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--bg-tertiary);
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-gradient);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.category-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Page Grid */
+.page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* Page Cards */
+.page-card {
+    position: relative;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    text-decoration: none;
+    color: var(--text-primary);
+    border: 2px solid var(--bg-tertiary);
+    transition: all var(--transition-base);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    min-height: 200px;
+}
+
+.page-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-gradient);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    z-index: 0;
+}
+
+.page-card:hover::before {
+    opacity: 0.05;
+}
+
+.page-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-8px) scale(1.02);
+}
+
+.page-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.page-card-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+    transition: transform var(--transition-base);
+}
+
+.page-card:hover .page-card-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.page-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.page-card-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.page-card-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.page-card-badge.new {
+    background: linear-gradient(135deg, var(--success-color) 0%, #059669 100%);
+    color: white;
+}
+
+.page-card-badge.new::before {
+    content: '✨ ';
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .page-card {
+    background: var(--bg-tertiary);
+    border-color: #475569;
+}
+
+[data-theme="dark"] .page-card:hover {
+    background: var(--bg-secondary);
+    border-color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .page-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .category-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+    
+    .category-title {
+        font-size: 1.5rem;
+    }
+    
+    .page-card {
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+    
+    .category-section {
+        padding: var(--spacing-lg);
+    }
+    
+    .category-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Animation on Scroll */
+.category-section {
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animation for cards */
+.page-card {
+    animation: cardFadeIn 0.5s ease-out backwards;
+}
+
+.page-card:nth-child(1) { animation-delay: 0.1s; }
+.page-card:nth-child(2) { animation-delay: 0.2s; }
+.page-card:nth-child(3) { animation-delay: 0.3s; }
+.page-card:nth-child(4) { animation-delay: 0.4s; }
+.page-card:nth-child(5) { animation-delay: 0.5s; }
+.page-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

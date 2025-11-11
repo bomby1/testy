@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEPSE Stock Screener - All Tools</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="page-navigator.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>NEPSE Stock Screener</h1>
+            <div class="nav-container">
+                <button id="getStocksBtn" class="get-stocks-btn">GET STOCKS</button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links" id="navLinks">
+                    <!-- Navigation links will be populated by common-nav.js -->
+                </div>
+            </div>
+        </header>
+        <div class="nav-overlay" id="navOverlay"></div>
+
+        <!-- Hero Section -->
+        <div class="hero-section fade-in">
+            <h2 class="hero-title">Professional Stock Analysis Tools</h2>
+            <p class="hero-subtitle">Choose from our comprehensive suite of trading and analysis tools</p>
+        </div>
+
+        <!-- Page Categories -->
+        <div class="page-categories">
+            <!-- Trading & Analysis -->
+            <div class="category-section fade-in">
+                <div class="category-header">
+                    <div class="category-icon">📈</div>
+                    <h3 class="category-title">Trading & Analysis</h3>
+                </div>
+                <div class="page-grid">
+                    <a href="dashboard.html" class="page-card hover-lift">
+                        <div class="page-card-icon">📊</div>
+                        <h4 class="page-card-title">Dashboard</h4>
+                        <p class="page-card-description">Main watchlist and stock management</p>
+                        <div class="page-card-badge">Core</div>
+                    </a>
+
+                    <a href="advanced-chart.html" class="page-card hover-lift">
+                        <div class="page-card-icon">📉</div>
+                        <h4 class="page-card-title">Advanced Chart</h4>
+                        <p class="page-card-description">Professional trading chart with indicators</p>
+                        <div class="page-card-badge new">New</div>
+                    </a>
+
+                    <a href="signals.html" class="page-card hover-lift">
+                        <div class="page-card-icon">🎯</div>
+                        <h4 class="page-card-title">Trading Signals</h4>
+                        <p class="page-card-description">RSI Pivot Trendline strategy signals</p>
+                        <div class="page-card-badge">Popular</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Support & Resistance -->
+            <div class="category-section fade-in">
+                <div class="category-header">
+                    <div class="category-icon">🎚️</div>
+                    <h3 class="category-title">Support & Resistance</h3>
+                </div>
+                <div class="page-grid">
+                    <a href="support-stocks.html" class="page-card hover-lift">
+                        <div class="page-card-icon">📍</div>
+                        <h4 class="page-card-title">Support Stocks</h4>
+                        <p class="page-card-description">Stocks near support levels</p>
+                    </a>
+
+                    <a href="rsi-support.html" class="page-card hover-lift">
+                        <div class="page-card-icon">📐</div>
+                        <h4 class="page-card-title">RSI + Support</h4>
+                        <p class="page-card-description">Combined RSI and support analysis</p>
+                    </a>
+
+                    <a href="support-prediction.html" class="page-card hover-lift">
+                        <div class="page-card-icon">🔮</div>
+                        <h4 class="page-card-title">Support Prediction</h4>
+                        <p class="page-card-description">AI-powered support level prediction</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Risk Management -->
+            <div class="category-section fade-in">
+                <div class="category-header">
+                    <div class="category-icon">🛡️</div>
+                    <h3 class="category-title">Risk Management</h3>
+                </div>
+                <div class="page-grid">
+                    <a href="stoploss.html" class="page-card hover-lift">
+                        <div class="page-card-icon">🚨</div>
+                        <h4 class="page-card-title">Stoploss Tracker</h4>
+                        <p class="page-card-description">Manage and track stop losses</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pattern Analysis -->
+            <div class="category-section fade-in">
+                <div class="category-header">
+                    <div class="category-icon">🔍</div>
+                    <h3 class="category-title">Pattern Analysis</h3>
+                </div>
+                <div class="page-grid">
+                    <a href="consolidation-scanner.html" class="page-card hover-lift">
+                        <div class="page-card-icon">📏</div>
+                        <h4 class="page-card-title">Consolidation Scanner</h4>
+                        <p class="page-card-description">Find consolidating stocks</p>
+                    </a>
+
+                    <a href="consolidation-analyzer.html" class="page-card hover-lift">
+                        <div class="page-card-icon">🔬</div>
+                        <h4 class="page-card-title">Consolidation Analyzer</h4>
+                        <p class="page-card-description">Deep consolidation analysis</p>
+                    </a>
+
+                    <a href="enhanced-trendline-scanner.html" class="page-card hover-lift">
+                        <div class="page-card-icon">📈</div>
+                        <h4 class="page-card-title">Trendline Scanner</h4>
+                        <p class="page-card-description">Enhanced trendline detection</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Institutional Activity -->
+            <div class="category-section fade-in">
+                <div class="category-header">
+                    <div class="category-icon">🏦</div>
+                    <h3 class="category-title">Institutional Activity</h3>
+                </div>
+                <div class="page-grid">
+                    <a href="institutional-activity.html" class="page-card hover-lift">
+                        <div class="page-card-icon">🏢</div>
+                        <h4 class="page-card-title">Institutional Activity</h4>
+                        <p class="page-card-description">Track institutional movements</p>
+                    </a>
+
+                    <a href="big-player-accumulation.html" class="page-card hover-lift">
+                        <div class="page-card-icon">💼</div>
+                        <h4 class="page-card-title">Big Player Accumulation</h4>
+                        <p class="page-card-description">Detect large player activity</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Market Overview -->
+            <div class="category-section fade-in">
+                <div class="category-header">
+                    <div class="category-icon">🗺️</div>
+                    <h3 class="category-title">Market Overview</h3>
+                </div>
+                <div class="page-grid">
+                    <a href="heatmap.html" class="page-card hover-lift">
+                        <div class="page-card-icon">🔥</div>
+                        <h4 class="page-card-title">Weekly Heatmap</h4>
+                        <p class="page-card-description">Visual market performance heatmap</p>
+                    </a>
+
+                    <a href="ipo-rights.html" class="page-card hover-lift">
+                        <div class="page-card-icon">🎫</div>
+                        <h4 class="page-card-title">IPO & Rights</h4>
+                        <p class="page-card-description">Track IPO and rights issues</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+        <span id="themeIcon">🌙</span>
+    </button>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" title="Scroll to Top">
+        ↑
+    </button>
+
+    <script src="common-nav.js"></script>
+    <script src="animations.js"></script>
+    <script src="theme-toggle.js"></script>
+</body>
+</html>
