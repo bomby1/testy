@@ -1,6 +1,6 @@
 name: Stock Notification Service
 
-on:
+off:
   schedule:
     # Run daily at 5:00 PM Nepal time (11:15 AM UTC)
     - cron: '30 11 * * *'
