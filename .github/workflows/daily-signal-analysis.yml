@@ -1,6 +1,6 @@
 name: Daily Signal Analysis
 
-on:
+off:
   schedule:
     # Run daily at 7:00 PM Nepal Time (NPT is UTC+5:45)
     # 7:00 PM NPT = 1:15 PM UTC (13:15 UTC)
