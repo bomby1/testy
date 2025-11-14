@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2025-11-13T13:52:52.804Z",
+  "lastUpdated": "2025-11-14T13:53:21.363Z",
   "currentBuySignals": [
     {
       "symbol": "BEDC",
       "signal": "BUY",
       "date": "2025_11_10",
-      "generatedOn": "2025-11-13",
+      "generatedOn": "2025-11-14",
       "price": 605,
       "details": {
         "rsiFast": "46.65",
@@ -18,7 +18,7 @@
       "symbol": "CITY",
       "signal": "BUY",
       "date": "2025_11_10",
-      "generatedOn": "2025-11-13",
+      "generatedOn": "2025-11-14",
       "price": 564,
       "details": {
         "rsiFast": "44.14",
@@ -33,7 +33,7 @@
       "symbol": "NLG",
       "signal": "SELL",
       "date": "2025_11_10",
-      "generatedOn": "2025-11-13",
+      "generatedOn": "2025-11-14",
       "price": 693,
       "details": {
         "rsiFast": "38.53",
@@ -46,7 +46,7 @@
       "symbol": "SKBBL",
       "signal": "SELL",
       "date": "2025_11_10",
-      "generatedOn": "2025-11-13",
+      "generatedOn": "2025-11-14",
       "price": 852.3,
       "details": {
         "rsiFast": "45.43",
@@ -411,6 +411,31 @@
     },
     {
       "date": "2025-11-13",
+      "buyCount": 2,
+      "sellCount": 2,
+      "buySignals": [
+        {
+          "symbol": "BEDC",
+          "price": 605
+        },
+        {
+          "symbol": "CITY",
+          "price": 564
+        }
+      ],
+      "sellSignals": [
+        {
+          "symbol": "NLG",
+          "price": 693
+        },
+        {
+          "symbol": "SKBBL",
+          "price": 852.3
+        }
+      ]
+    },
+    {
+      "date": "2025-11-14",
       "buyCount": 2,
       "sellCount": 2,
       "buySignals": [
